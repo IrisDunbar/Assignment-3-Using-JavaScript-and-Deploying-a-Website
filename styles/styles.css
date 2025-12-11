@@ -1,0 +1,380 @@
+/************* your name: Iris Dunbar
+
+INSTRUCTIONS:
+Comments starting with TO-DO have been included in this file to describe the needed styling: please translate these to the appropriate CSS declarations.
+
+Comments starting with TO-DO may be left in for reference or removed entirely: all other comments should be left as-is for ease of review.
+
+You are encouraged to improve any provided CSS by using modern units and increasing responsive design functionality. However you are not supposed to rewrite the entire file.
+
+***** colour palette: *****
+- mustard yellow (used for header, footer, and buttons): #E5AF42
+- cornflower blue (used for hover states): #4278e5
+
+*/
+
+/************* site defaults *************/
+body {
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+}
+.flex {
+  display: flex;
+}
+
+/************* site-wide text styling *************/
+h2 {
+    font-size: 4vh;
+    margin-bottom: 1vh;
+}
+.large-text {
+    font-size: 2vh;
+}
+.fake-button {
+    background-color: #E5AF42;
+    padding: 2vh;
+    line-height: 3;
+    border: 1px solid black;
+}
+a, .fake-button {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline solid white;
+    color: white;
+}
+.fake-button:hover, .blue-hover:hover {
+    text-decoration: underline solid white;
+    color: white;
+    background-color: #4278e5;
+    cursor: pointer;
+}
+
+/* General Header styling (plus setting colour for footer as well) */
+header, footer {
+  background-color: #E5AF42;
+}
+header {
+  width: 100vw;
+  height: 11vh;
+  align-content: center;
+  justify-content: space-between;
+}
+header .flex{
+  margin-left: 1.5vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+header img {
+  width: 6.5vh;
+  height: 6.5vh;
+}
+h1 {
+  font-size: clamp(2vh, 4vh, 6vh);
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+/* General Footer styling */
+footer {
+  width: 100vw;
+  height: 10vh;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.8rem;
+}
+/* General Page sizing/styling */
+main {
+  margin-top: 7vh;
+  margin-bottom: 5vh;
+  min-height: 67vh;
+}
+/* General Index/Home page styling */
+.index h2, .index p {
+  margin-bottom: 1.5vh;
+}
+#buttons-layout a {
+  text-align: center;
+}
+/* General Booking page styling */
+.booking-page {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+.day-selector {
+  justify-content: center;
+  align-content: center;
+}
+.booking-page h2, .booking-page p, .booking-page ul {
+  margin-bottom: 4vh;
+}
+.booking-page li, .small-button {
+  padding: 1vh 1.5vw;
+  border: 1px solid black;
+}
+.clicked {
+  background-color: #E5AF42;
+}
+/* General Contact page styling */
+.contact {
+  text-align: center;
+  align-content: center;
+}
+.contact .flex {
+  justify-content: center;
+}
+.contact h2, .contact .flex {
+  margin-bottom: 4vh;
+}
+textarea {
+  height: clamp(25vh, 30vh, 40vh);
+}
+button {
+  height: 7vh;
+}
+
+/* Phone specific styling */
+@media (width <= 550px) {
+  /* Header and Footer */
+  header {
+    position: relative;
+    overflow: visible;
+  }
+  #hamburger-menu{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 2vh;
+    margin-right: 2vw;
+  }
+  #hamburger-nav {
+    display: none;
+    position: absolute;
+    bottom: -12vh;
+    right: 0;
+    background-color: #E5AF42;
+    width: 25vw;
+  }
+  #hamburger-nav li {
+    margin-bottom: 1vh;
+    margin-left: 3vw;
+  }
+  h1 {
+    display: none;
+  }
+  /* Index/Home page */
+  .index .flex {
+    flex-direction: column;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+  }
+  .about-us {
+    margin-left: clamp(2.5vw, 5vw, 7.5vw);
+    width: clamp(85vw, 90vw, 95vw);
+    margin-right: clamp(2.5vw, 5vw, 7.5vw);
+  }
+  .index img {
+    margin-left: clamp(2.5vw, 5vw, 7.5vw);
+    width: clamp(85vw, 90vw, 95vw);
+    height: clamp(85vw, 90vw, 95vw);
+    margin-right: clamp(2.5vw, 5vw, 7.5vw);
+    margin-bottom: 12px;
+  }
+  #buttons-layout {
+    flex-direction: row;
+    margin-left: clamp(2.5vw, 5vw, 7.5vw);
+    width: clamp(85vw, 90vw, 95vw);
+    margin-right: clamp(2.5vw, 5vw, 7.5vw);
+  }
+  #buttons-layout a {
+    width: clamp(40vw, 45vw, 47.5vw);
+    margin-left: clamp(2.5vw, 7.5vw, 12.5vw);
+    margin-right: clamp(2.5vw, 7.5vw, 12.5vw);
+  }  
+  /* Booking Page */
+  .booking-page {
+    flex-direction: column;
+    min-height: 79vh;
+  }
+  .day-selector {
+    flex-direction: column;
+    gap: 2vh;
+  }
+  .booking-page li {
+    width: 12vw;
+    align-self: center
+  }
+  #clear-button {
+    margin-left: 35vw;
+    max-width: 25vw;
+  }
+  /*Contact Page */
+  .contact .flex {
+    flex-direction: column;
+    margin-left: 15vw;
+  }
+  .contact h2 {
+    margin-top: 6vh;
+  }
+  .contact label {
+    text-align: left;
+  }
+  input, textarea {
+    width: 70vw;
+  }
+  button {
+    width: 70vw;
+    margin-bottom: 6vh;
+  }
+}
+
+/* Tablet specific styling */
+@media (width > 550px) and (width <= 850px) {
+  /* Header and Footer */
+  header {
+    position: relative;
+    overflow: visible;
+  } 
+  #hamburger-menu{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 2vh;
+    margin-right: 2vw;
+  }
+  #hamburger-nav {
+    display: none;
+    position: absolute;
+    bottom: -12vh;
+    right: 0;
+    background-color: #E5AF42;
+    width: 25vw;
+  }
+  #hamburger-nav li {
+    margin-bottom: 1vh;
+    margin-left: 3vw;
+  }
+  /* Index/Home page */
+  .index {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-us {
+    width: clamp(80vw, 85vw, 90vw);
+    margin-left: clamp(2.5vw, 5vw, 7.5vw);
+    margin-right: clamp(2.5vw, 5vw, 7.5vw);
+  }
+  .index img {
+    align-self: center;
+    width: clamp(40vw, 50vw, 60vw);
+    height: clamp(35vw, 45vw, 55vw);
+  }
+  #buttons-layout {
+    flex-direction: row;
+    margin-top: 8vh;
+    margin-left: 12.5vw;
+    margin-right: 12.5vw;
+    justify-content: space-between;
+  }
+  #buttons-layout a {
+    width: clamp(20vw, 25vw, 30vw);
+  } 
+  /* Booking Page */
+  .booking-page {
+    flex-direction: column;
+    min-height: 79vh;
+  }
+  .day-selector {
+    gap: 4vw;
+  }
+  .booking-page li {
+    min-width: 6vw;
+  }
+  #clear-button {
+    margin-left: 35vw;
+    max-width: 25vw;
+  }
+  /*Contact Page */ 
+  .contact .flex label{
+    width: 25vw;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 5vw;
+  }
+  input, textarea {
+    width: 45vw;
+    flex-direction: column;
+    margin-right: 15vw;
+  }
+  button {
+    width: 45vw;
+    margin-left: 15vw;
+  }
+}
+
+/* Desktop specific styling */
+@media (width > 850px) {
+  /* Header and Footer*/
+  header .nav {
+    display: flex;
+    margin-right: 2vw;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+    flex-direction: row;
+    gap: 1vw;
+  }
+  #hamburger-menu {
+    display: none;
+  }
+  /* Index/Home page */
+  .about-us {
+    width: clamp(50vw, 58vw, 65vw);
+    margin-left: 5vw;
+    margin-right: 4vw;
+  }
+  main img {
+    align-self: center;
+    width: 28vw;
+    height: 28vw;
+    margin-right: 5vw;
+  }
+  #buttons-layout {
+    margin-top: 5vh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    justify-content: space-around;
+  }
+  #buttons-layout a {
+    width: clamp(10vw, 15vw, 20vw);
+  }
+  /* Booking Page */
+  .day-selector {
+    gap: 3vw;
+  }
+  #clear-button {
+    margin-left: 41.5vw;
+    max-width: 15vw;
+  }
+  /*Contact Page */
+  .contact .flex label{
+    width: 30vw;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 5vw;
+  }
+  input, textarea {
+    width: 35vw;
+    flex-direction: column;
+    margin-right: 20vw;
+  }
+  button {
+    width: 35vw;
+    margin-left: 15vw;
+  }
+}
